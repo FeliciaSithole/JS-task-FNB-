@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loginform</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+   <div class="wrapper"> 
+     <h1>Welcome. Please log in</h1>
+        <form>
+            <label class="input-box" for="usernameInput">Username:</label><input type="text" id="usernameInput"/><br/>
+            <label class="input-box" for="passwordInput">Password:</label><input type="password" id="passwordInput"/><br/>
+             <p id="message"></p>
+          
+            <div class="remember-forgot">
+            <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+        
+            <button type="submit" class="btn"><a href="#" onclick="verifyUser()">Log in</a></button>
+
+          <div class="register-link">
+             <p>Don't have an account? 
+                  <a href="#">Register</a>
+               </p>
+            </div>
+        </form>
+    </div>
+    <script>
+
+        function verifyUser(){
+            var username = document.getElementById("usernameInput").value;
+            var password = document.getElementById("passwordInput").value;
+            
+            checkUserCreds(username, password);
+        }
+
+        function checkUserCreds(username, password) {
+            var systemUsername = "Bond";
+            var systemPassword = "007";
+
+            if(username == systemUsername && password == systemPassword){
+            document.getElementById("message").innerHTML = "Correct. Loggin you in…";
+            } else {
+                document.getElementById("message").innerHTML = "Username or password are incorrect";
+            }
+        }
+  
+    </script>
+</body>
+</html>
