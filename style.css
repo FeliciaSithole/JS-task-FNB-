@@ -113,3 +113,9 @@ body {
 .register-link p a:hover {
     text-decoration: underline;
 }
+
+.input {
+    border-radius: 20px;
+    background: #ffff;
+    border: 1px;
+}
